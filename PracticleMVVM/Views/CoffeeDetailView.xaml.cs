@@ -55,5 +55,10 @@ namespace PracticleMVVM.Views
         {
             this.Close();
         }
+        private void ChangeCoffeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedCoffee.CoffeeName = "Something Realy Expenses";
+            SelectedCoffee.Price = 1000;
+        }
     }
 }

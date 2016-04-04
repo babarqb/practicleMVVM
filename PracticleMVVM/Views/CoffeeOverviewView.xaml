@@ -70,9 +70,12 @@
             <Label Grid.Row="5" Grid.Column="1" Name="StockAmountLabel"></Label>
             <Label Grid.Row="6" Grid.Column="1" Name="FirstTimeAddedLabel"></Label>
 
-            <StackPanel Grid.Row="7" >
-                <Button  Name="EditCoffeeButton" Click="EditCoffeeButton_Click"  Content="Edit coffee"></Button>
+            <StackPanel Grid.Row="7"  Grid.ColumnSpan="2"  Orientation="Horizontal">
+                <Button  x:Name="EditCoffeeButton" Click="EditCoffeeButton_Click"  Content="Edit coffee" Width="150"/>
+                <Button x:Name="AddFakeCoffeeButton" Click="AddFakeCoffeeButton_Click"  Content="Add  coffee" Width="150" />
             </StackPanel>
+            
+
         </Grid>
     </Grid>
 </controls:MetroWindow>

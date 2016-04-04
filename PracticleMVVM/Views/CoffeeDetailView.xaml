@@ -30,7 +30,7 @@
                    Name="CoffeeNameLabel" 
                    Grid.ColumnSpan="2" FontSize="40" 
                    FontWeight="Bold"
-                   Content="{Binding CoffeeName}"/>
+                   Content="{Binding CoffeeName,Mode=OneWay}"/>
 
             <Image Name="CoffeeImage" Grid.Row="1"
                    Grid.ColumnSpan="2" MaxHeight="150" MaxWidth="150"></Image>
@@ -40,9 +40,9 @@
             <Label Grid.Row="5" Content="Stock amount" FontWeight="Bold"></Label>
             <Label Grid.Row="6" Content="First time added" FontWeight="Bold"></Label>
 
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CoffeeId}" Name="CoffeeIdTextBox"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Description}" Name="CoffeeDescriptionTextBox" AcceptsReturn="True" Height="75"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Price}" Name="CoffeePriceTextBox"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CoffeeId,Mode=OneWay}" Name="CoffeeIdTextBox"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Description,Mode=OneWay}" Name="CoffeeDescriptionTextBox" AcceptsReturn="True" Height="75"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Price,Mode=OneWay}" Name="CoffeePriceTextBox"></TextBox>
             <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding AmountInStock}" Name="StockAmountTextBox"></TextBox>
             <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding FirstAddedToStockDate}" Name="FirstTimeAddedTextBox"></TextBox>
             <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding ExtraDescription}" Name="ExtraDescriptionTextBox"></TextBox>
@@ -50,6 +50,7 @@
             <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
                 <Button Name="SaveCoffeeButton" Click="SaveCoffeeButton_Click" Margin="5" Content="Save coffee"></Button>
                 <Button  Name="DeleteCoffeeButton" Click="DeleteCoffeeButton_Click"  Margin="5" Content="Delete coffee"></Button>
+                <Button  Name="ChangeCoffeeButton" Click="ChangeCoffeeButton_Click"  Margin="5" Content="Change coffee"></Button>
             </StackPanel>
 
         </Grid>
