@@ -22,28 +22,29 @@ namespace PracticleMVVM.Views
 
         void CoffeeDetailView_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadData();
+            //LoadData();
+            DataContext = SelectedCoffee;
         }
 
-        private void LoadData()
-        {
-            CoffeeNameLabel.Content = SelectedCoffee.CoffeeName;
-            CoffeeIdTextBox.Text = SelectedCoffee.CoffeeId.ToString();
-            CoffeeDescriptionTextBox.Text = SelectedCoffee.Description;
-            CoffeePriceTextBox.Text = SelectedCoffee.Price.ToString();
-            StockAmountTextBox.Text = SelectedCoffee.AmountInStock.ToString();
-            FirstTimeAddedTextBox.Text = SelectedCoffee.FirstAddedToStockDate.ToShortDateString();
-            if (SelectedCoffee is SuperiorCoffee)
-                ExtraDescriptionTextBox.Text = (SelectedCoffee as SuperiorCoffee).ExtraDescription;
-            else
-                ExtraDescriptionTextBox.Text = "NA";
+        //private void LoadData()
+        //{
+        //    CoffeeNameLabel.Content = SelectedCoffee.CoffeeName;
+        //    CoffeeIdTextBox.Text = SelectedCoffee.CoffeeId.ToString();
+        //    CoffeeDescriptionTextBox.Text = SelectedCoffee.Description;
+        //    CoffeePriceTextBox.Text = SelectedCoffee.Price.ToString();
+        //    StockAmountTextBox.Text = SelectedCoffee.AmountInStock.ToString();
+        //    FirstTimeAddedTextBox.Text = SelectedCoffee.FirstAddedToStockDate.ToShortDateString();
+        //    if (SelectedCoffee is SuperiorCoffee)
+        //        ExtraDescriptionTextBox.Text = (SelectedCoffee as SuperiorCoffee).ExtraDescription;
+        //    else
+        //        ExtraDescriptionTextBox.Text = "NA";
 
-            BitmapImage img = new BitmapImage();
-            img.BeginInit();
-            img.UriSource = new Uri("/PracticleMVVM;component/Images/coffee" + SelectedCoffee.CoffeeId + ".jpg", UriKind.Relative);
-            img.EndInit();
-            CoffeeImage.Source = img;
-        }
+        //    BitmapImage img = new BitmapImage();
+        //    img.BeginInit();
+        //    img.UriSource = new Uri("/PracticleMVVM;component/Images/coffee" + SelectedCoffee.CoffeeId + ".jpg", UriKind.Relative);
+        //    img.EndInit();
+        //    CoffeeImage.Source = img;
+        //}
 
         private void DeleteCoffeeButton_Click(object sender, RoutedEventArgs e)
         {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -14,6 +15,7 @@ namespace PracticleMVVM.Views
     public partial class CoffeeOverviewView : MetroWindow
     {
         private Coffee _selectedCoffee;
+        private List<Coffee> _coffees;
         public CoffeeOverviewView()
         {
             InitializeComponent();
@@ -24,7 +26,9 @@ namespace PracticleMVVM.Views
         private void LoadData()
         {
             CoffeeDataService coffeeDataService = new CoffeeDataService();
-            CoffeeListView.ItemsSource = coffeeDataService.GetAllCoffees();
+            //CoffeeListView.ItemsSource = coffeeDataService.GetAllCoffees();
+            _coffees = coffeeDataService.GetAllCoffees();
+            CoffeeListView.ItemsSource = _coffees;
         }
 
         private void EditCoffeeButton_Click(object sender, RoutedEventArgs e)
